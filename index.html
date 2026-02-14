@@ -41,10 +41,13 @@
     <meta name="twitter:description" content="World's First 5000+ AI Generated Telugu Shiva Songs Movement. Where Devotion meets Artificial Intelligence." />
     <meta name="twitter:image" content="https://ai-mahashivaratri.vercel.app/og-image.png" />
 
-    <!-- Fonts -->
+    <!-- Preload & preconnect for fast load -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="preload" href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80" as="image" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
     <!-- JSON-LD: Event -->
     <script type="application/ld+json">
@@ -72,9 +75,23 @@
       "description": "World's First 5000+ AI Generated Telugu Shiva Songs Movement."
     }
     </script>
+    <!-- Inline skeleton: visible until React mounts -->
+    <style>
+      #root .load-skeleton{min-height:100vh;background:#0B0F2F}#root .load-skeleton header{height:4rem;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;padding:0 1rem}#root .load-skeleton .sk-bar{height:2.5rem;width:5rem;background:rgba(255,255,255,.08);border-radius:4px;animation:sk-pulse 1.2s ease-in-out infinite}#root .load-skeleton .sk-title{height:1.25rem;width:8rem;background:rgba(255,255,255,.08);border-radius:4px;margin-left:.75rem;animation:sk-pulse 1.2s ease-in-out infinite}#root .load-skeleton .hero{min-height:calc(100vh - 4rem);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}#root .load-skeleton .sk-hero1{height:.75rem;width:6rem;background:rgba(255,255,255,.08);border-radius:4px;margin-bottom:1.5rem;animation:sk-pulse 1.2s ease-in-out infinite}#root .load-skeleton .sk-hero2{height:2.5rem;width:min(100%,16rem);background:rgba(255,255,255,.08);border-radius:4px;margin-bottom:.75rem;animation:sk-pulse 1.2s ease-in-out infinite}#root .load-skeleton .sk-hero3{height:2rem;width:min(100%,12rem);background:rgba(255,255,255,.08);border-radius:4px;margin-bottom:2rem;animation:sk-pulse 1.2s ease-in-out infinite}#root .load-skeleton .sk-cta{height:3rem;width:10rem;background:rgba(255,255,255,.1);border-radius:12px;animation:sk-pulse 1.2s ease-in-out infinite}@keyframes sk-pulse{0%,100%{opacity:.6}50%{opacity:1}}
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="load-skeleton" id="app-skeleton">
+        <header><div class="sk-bar"></div><div class="sk-title"></div></header>
+        <div class="hero">
+          <div class="sk-hero1"></div>
+          <div class="sk-hero2"></div>
+          <div class="sk-hero3"></div>
+          <div class="sk-cta"></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

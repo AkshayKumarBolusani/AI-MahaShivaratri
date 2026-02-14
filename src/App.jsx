@@ -1,16 +1,11 @@
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
-import Vision from './components/Vision'
-import Numbers from './components/Numbers'
-import HowItWorks from './components/HowItWorks'
-import WhyHistoric from './components/WhyHistoric'
-import FinalCTA from './components/FinalCTA'
-import Footer from './components/Footer'
-import CursorGlow from './components/CursorGlow'
-import FloatingParticles from './components/FloatingParticles'
+import { SectionSkeleton } from './components/Skeleton'
+
+const BelowFold = lazy(() => import('./components/BelowFold'))
+const CursorGlow = lazy(() => import('./components/CursorGlow'))
+const FloatingParticles = lazy(() => import('./components/FloatingParticles'))
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -31,18 +26,16 @@ function App() {
 
   return (
     <>
-      {!isTouch && <CursorGlow x={mousePosition.x} y={mousePosition.y} />}
+      <Suspense fallback={null}>
+        {!isTouch && <CursorGlow x={mousePosition.x} y={mousePosition.y} />}
+        <FloatingParticles />
+      </Suspense>
       <Navbar />
       <main>
         <Hero />
-        <FloatingParticles />
-        <About />
-        <Vision />
-        <Numbers />
-        <HowItWorks />
-        <WhyHistoric />
-        <FinalCTA />
-        <Footer />
+        <Suspense fallback={<SectionSkeleton />}>
+          <BelowFold />
+        </Suspense>
       </main>
     </>
   )
