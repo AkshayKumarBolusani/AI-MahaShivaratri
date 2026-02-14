@@ -26,12 +26,18 @@ function App() {
 
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-cosmic focus:font-semibold focus:rounded-lg focus:w-auto focus:h-auto focus:m-0 focus:overflow-visible focus:[clip:auto]"
+      >
+        Skip to main content
+      </a>
       <Suspense fallback={null}>
         {!isTouch && <CursorGlow x={mousePosition.x} y={mousePosition.y} />}
         <FloatingParticles />
       </Suspense>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <Suspense fallback={<SectionSkeleton />}>
           <BelowFold />

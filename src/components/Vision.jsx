@@ -29,7 +29,7 @@ export default function Vision() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5 }}
           className="text-gold/80 font-cinzel text-sm tracking-[0.3em] uppercase mb-8"
         >
           Our Vision
@@ -37,7 +37,7 @@ export default function Vision() {
         <motion.blockquote
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.7 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.6 }}
           className="font-cinzel font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight"
         >
           <span className="text-gold drop-shadow-[0_0_30px_rgba(255,215,0,0.3)]">
@@ -47,7 +47,7 @@ export default function Vision() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: 0.25 }}
           className="mt-8 text-slate-400 text-lg max-w-2xl mx-auto"
         >
           A new chapter in the eternal story of devotion—written with code, sung with soul.

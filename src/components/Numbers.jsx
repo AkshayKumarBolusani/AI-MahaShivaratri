@@ -59,7 +59,7 @@ export default function Numbers() {
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: i * 0.08 }}
               className="group relative rounded-2xl p-8 md:p-10 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-gold/30 hover:shadow-glow transition-all duration-500"
             >
               <div className="font-cinzel font-bold text-4xl md:text-5xl lg:text-6xl text-gold mb-2">

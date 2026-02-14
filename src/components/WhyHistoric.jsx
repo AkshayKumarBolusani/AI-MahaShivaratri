@@ -47,7 +47,7 @@ export default function WhyHistoric() {
               key={point.title}
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: i * 0.1 }}
               className="rounded-2xl p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-gold/30 hover:shadow-glow transition-all duration-300"
             >
               <div className="mb-3 flex">

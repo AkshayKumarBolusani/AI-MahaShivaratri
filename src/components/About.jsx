@@ -15,7 +15,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5 }}
             className="order-2 md:order-1"
           >
             <p className="text-gold font-cinzel text-sm tracking-[0.2em] uppercase mb-4">About the Event</p>
@@ -39,7 +39,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: 0.15 }}
             className="order-1 md:order-2 relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-violet/20 ring-1 ring-white/10">

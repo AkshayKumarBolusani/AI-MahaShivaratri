@@ -55,7 +55,7 @@ export default function HowItWorks() {
                 key={step.title}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
+                transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.45, delay: i * 0.1 }}
                 className={`relative md:flex md:items-center md:min-h-[180px] ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className={`md:w-[calc(50%-3rem)] pl-0 ${i % 2 === 1 ? 'md:pl-12 md:pr-0 md:text-right' : 'md:pr-12'}`}>

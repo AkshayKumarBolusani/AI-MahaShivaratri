@@ -7,14 +7,20 @@ export default function Hero() {
   const [offset, setOffset] = useState(0)
 
   useEffect(() => {
+    let ticking = false
     const onScroll = () => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect()
-        const speed = 0.15
-        setOffset((window.innerHeight - rect.top) * speed)
-      }
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect()
+          const speed = 0.15
+          setOffset((window.innerHeight - rect.top) * speed)
+        }
+        ticking = false
+      })
     }
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -58,7 +64,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5 }}
           className="text-gold font-cinzel text-sm md:text-base tracking-[0.3em] uppercase mb-4"
         >
           World&apos;s First
@@ -66,7 +72,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: 0.08 }}
           className="font-cinzel font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6"
         >
           <span className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
@@ -82,7 +88,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: 0.15 }}
           className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-8 font-light"
         >
           World&apos;s First <span className="text-cyan font-medium">5000+ AI Generated</span> Telugu Shiva Songs Movement
@@ -90,7 +96,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: 0.25 }}
           className="text-gold font-cinzel text-base md:text-lg tracking-wide mb-3"
         >
           50+ Captains · 500+ Devotees · 5000+ Songs · 1 Divine Night
@@ -98,7 +104,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: 0.3 }}
           className="text-slate-400 text-sm md:text-base mb-10"
         >
           Song Creation: 10AM – 11AM IST &nbsp;·&nbsp; Playing of Songs: 10PM – 1AM IST
@@ -106,14 +112,14 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
+          transition={{ type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 0.5, delay: 0.35 }}
           className="pb-16 md:pb-0"
         >
           <a
             href="https://learn.superaiacademy.com/l/64eff2a227"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-4 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-fire-orange to-amber-600 text-white font-semibold text-base sm:text-lg shadow-glow hover:shadow-[0_0_60px_rgba(249,115,22,0.5)] hover:scale-105 transition-all duration-300 active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-4 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-fire-orange to-amber-600 text-white font-semibold text-base sm:text-lg shadow-glow hover:shadow-[0_0_60px_rgba(249,115,22,0.5)] hover:scale-105 transition-all duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic"
           >
             <span className="flex shrink-0 w-5 h-10" aria-hidden>
               <PremiumTrishul className="w-full h-full" noFloat />
@@ -127,7 +133,7 @@ export default function Hero() {
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
         animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        transition={{ type: 'tween', ease: 'easeInOut', duration: 2, repeat: Infinity }}
         aria-hidden
       >
         <div className="w-8 h-12 rounded-full border-2 border-gold/50 flex justify-center pt-2">

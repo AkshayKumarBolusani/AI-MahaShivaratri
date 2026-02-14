@@ -6,6 +6,14 @@ export default {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'smooth-in': 'cubic-bezier(0.4, 0, 1, 1)',
+        'smooth-out': 'cubic-bezier(0, 0, 0.2, 1)',
+      },
+      transitionDuration: {
+        400: '400ms',
+      },
       colors: {
         cosmic: '#0B0F2F',
         'shiva-blue': '#1E3A8A',

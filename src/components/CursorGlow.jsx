@@ -15,7 +15,7 @@ export default function CursorGlow({ x, y }) {
         background: 'radial-gradient(circle, rgba(255, 215, 0, 0.06) 0%, transparent 70%)',
       }}
       animate={{ opacity: 1 }}
-      transition={{ type: 'spring', stiffness: 500, damping: 28 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 25 }}
     />
   )
 }
