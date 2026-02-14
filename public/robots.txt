@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap (replace with your production domain after deploy)
+Sitemap: https://ai-mahashivaratri.vercel.app/sitemap.xml

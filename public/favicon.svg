@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="trishulGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#F59E0B"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M32 4 L32 28 M24 28 L40 28 M32 28 L32 52 M28 52 L36 52" stroke="url(#trishulGold)" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="32" cy="28" r="4" fill="url(#trishulGold)"/>
+</svg>
