@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
@@ -7,6 +8,8 @@ export default function Navbar() {
   const links = [
     { href: '#about', label: 'About' },
     { href: '#vision', label: 'Vision' },
+    { href: '/song-styles', label: 'Song Styles', isRoute: true },
+    { href: '/categories', label: 'Categories', isRoute: true },
     { href: '#about-me', label: 'About Me' },
     { href: '#numbers', label: 'Numbers' },
     { href: '#how-it-works', label: 'How It Works' },
@@ -23,20 +26,30 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <a href="#" className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic rounded" aria-label="AI MahaShivaratri - Home">
+            <Link to="/" className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic rounded" aria-label="AI MahaShivaratri - Home">
               <img src="/loggo.png" alt="" className="h-8 md:h-10 w-auto object-contain" width={120} height={40} />
-            </a>
+            </Link>
 
             <div className="hidden md:flex items-center gap-8">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-slate-300 hover:text-gold transition-colors duration-200 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic rounded px-1"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {links.map((link) =>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-sm text-slate-300 hover:text-gold transition-colors duration-200 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic rounded px-1"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-slate-300 hover:text-gold transition-colors duration-200 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic rounded px-1"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
               <a
                 href="https://learn.superaiacademy.com/l/64eff2a227"
                 target="_blank"
@@ -77,16 +90,27 @@ export default function Navbar() {
               className="md:hidden bg-cosmic/95 backdrop-blur-xl border-t border-white/5"
             >
               <div className="px-4 py-4 space-y-3">
-                {links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-slate-300 hover:text-gold focus-visible:text-gold rounded"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {links.map((link) =>
+                  link.isRoute ? (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block py-2 text-slate-300 hover:text-gold focus-visible:text-gold rounded"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block py-2 text-slate-300 hover:text-gold focus-visible:text-gold rounded"
+                    >
+                      {link.label}
+                    </a>
+                  )
+                )}
                 <a
                   href="https://learn.superaiacademy.com/l/64eff2a227"
                   target="_blank"

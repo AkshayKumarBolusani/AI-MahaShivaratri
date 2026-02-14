@@ -1,7 +1,10 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import { SectionSkeleton } from './components/Skeleton'
+import CategoriesPage from './components/CategoriesPage'
+import SongStylesPage from './components/SongStylesPage'
 
 const BelowFold = lazy(() => import('./components/BelowFold'))
 const CursorGlow = lazy(() => import('./components/CursorGlow'))
@@ -38,10 +41,21 @@ function App() {
       </Suspense>
       <Navbar />
       <main id="main-content">
-        <Hero />
-        <Suspense fallback={<SectionSkeleton />}>
-          <BelowFold />
-        </Suspense>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Suspense fallback={<SectionSkeleton />}>
+                  <BelowFold />
+                </Suspense>
+              </>
+            }
+          />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/song-styles" element={<SongStylesPage />} />
+        </Routes>
       </main>
     </>
   )
