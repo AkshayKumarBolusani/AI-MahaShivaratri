@@ -91,9 +91,17 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-gold font-cinzel text-base md:text-lg tracking-wide mb-10"
+          className="text-gold font-cinzel text-base md:text-lg tracking-wide mb-3"
         >
           50+ Captains · 500+ Devotees · 5000+ Songs · 1 Divine Night
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-slate-400 text-sm md:text-base mb-10"
+        >
+          Song Creation: 10AM – 11AM IST &nbsp;·&nbsp; Playing of Songs: 10PM – 1AM IST
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

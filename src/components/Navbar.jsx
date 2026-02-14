@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import PremiumTrishul from './PremiumTrishul'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -23,13 +22,8 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <a href="#" className="flex items-center gap-2 group">
-              <span className="flex shrink-0 w-5 h-10 md:w-6 md:h-12" aria-hidden>
-                <PremiumTrishul className="w-full h-full" noFloat />
-              </span>
-              <span className="font-cinzel font-semibold text-white text-lg md:text-xl tracking-wide">
-                AI MahaShivaratri
-              </span>
+            <a href="#" className="flex items-center group">
+              <img src="/loggo.png" alt="AI MahaShivaratri" className="h-8 md:h-10 w-auto object-contain" width={120} height={40} />
             </a>
 
             <div className="hidden md:flex items-center gap-8">
@@ -97,9 +91,6 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center gap-2 min-h-[48px] py-3 px-4 rounded-lg bg-gradient-to-r from-gold to-amber-500 text-cosmic font-semibold"
                 >
-                  <span className="flex shrink-0 w-5 h-10" aria-hidden>
-                    <PremiumTrishul className="w-full h-full" noFloat />
-                  </span>
                   Register Now
                 </a>
               </div>

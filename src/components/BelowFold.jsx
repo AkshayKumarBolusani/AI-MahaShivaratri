@@ -1,5 +1,6 @@
 import About from './About'
 import Vision from './Vision'
+import AboutMe from './AboutMe'
 import Numbers from './Numbers'
 import HowItWorks from './HowItWorks'
 import WhyHistoric from './WhyHistoric'
@@ -11,6 +12,7 @@ export default function BelowFold() {
     <>
       <About />
       <Vision />
+      <AboutMe />
       <Numbers />
       <HowItWorks />
       <WhyHistoric />

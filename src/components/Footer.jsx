@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import PremiumTrishul from './PremiumTrishul'
 
 export default function Footer() {
   return (
@@ -15,11 +14,8 @@ export default function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-2">
-            <span className="flex shrink-0 w-5 h-10 md:w-6 md:h-12" aria-hidden>
-              <PremiumTrishul className="w-full h-full" noFloat />
-            </span>
-            <span className="font-cinzel font-semibold text-white text-lg">AI MahaShivaratri 2026</span>
+          <div className="flex items-center">
+            <img src="/loggo.png" alt="AI MahaShivaratri 2026" className="h-10 md:h-12 w-auto object-contain" width={140} height={48} />
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-slate-400 hover:text-gold transition-colors" aria-label="Twitter">
@@ -39,7 +35,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="text-center text-slate-500 text-sm mt-10"
         >
-          Made with Devotion & AI · Om Namah Shivaya
+          The SuperAI Academy Initiative · Om Namah Shivaya
         </motion.p>
       </div>
     </footer>

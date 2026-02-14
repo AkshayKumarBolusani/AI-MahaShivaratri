@@ -40,7 +40,7 @@ export default function Vision() {
           transition={{ duration: 0.7 }}
           className="font-cinzel font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight"
         >
-          <span className="bg-gradient-to-r from-gold via-amber-200 to-cyan bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,215,0,0.3)]">
+          <span className="text-gold drop-shadow-[0_0_30px_rgba(255,215,0,0.3)]">
             &ldquo;Where Devotion meets Artificial Intelligence&rdquo;
           </span>
         </motion.blockquote>

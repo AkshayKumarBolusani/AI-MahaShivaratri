@@ -38,9 +38,17 @@ export default function FinalCTA() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2 }}
-          className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto"
+          className="text-slate-400 text-lg mb-4 max-w-2xl mx-auto"
         >
           Register now. Become a Creator or Captain. Be part of the world’s first 5000+ AI Shiva songs offering.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.25 }}
+          className="text-gold/90 text-sm md:text-base mb-10"
+        >
+          Song Creation: 10AM – 11AM IST &nbsp;·&nbsp; Playing of Songs: 10PM – 1AM IST
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
