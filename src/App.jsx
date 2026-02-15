@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import { SectionSkeleton } from './components/Skeleton'
 import CategoriesPage from './components/CategoriesPage'
 import SongStylesPage from './components/SongStylesPage'
+import SuccessPopup from './components/SuccessPopup'
 
 const BelowFold = lazy(() => import('./components/BelowFold'))
 const CursorGlow = lazy(() => import('./components/CursorGlow'))
@@ -13,6 +14,7 @@ const FloatingParticles = lazy(() => import('./components/FloatingParticles'))
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isTouch, setIsTouch] = useState(false)
+  const [successPopupOpen, setSuccessPopupOpen] = useState(true)
 
   useEffect(() => {
     setIsTouch('ontouchstart' in window || navigator.maxTouchPoints > 0)
@@ -40,6 +42,7 @@ function App() {
         <FloatingParticles />
       </Suspense>
       <Navbar />
+      <SuccessPopup open={successPopupOpen} onClose={() => setSuccessPopupOpen(false)} />
       <a
         href="https://suno.com/"
         target="_blank"
