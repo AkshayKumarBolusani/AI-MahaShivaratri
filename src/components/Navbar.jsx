@@ -10,8 +10,6 @@ export default function Navbar() {
     { href: '#vision', label: 'Vision' },
     { href: '/song-styles', label: 'Song Styles', isRoute: true },
     { href: '/categories', label: 'Categories', isRoute: true },
-    { href: '#about-me', label: 'About Me' },
-    { href: '#numbers', label: 'Numbers' },
     { href: '#how-it-works', label: 'How It Works' },
     { href: '#why-historic', label: 'Why Historic' },
   ]
@@ -50,15 +48,26 @@ export default function Navbar() {
                   </a>
                 )
               )}
-              <a
-                href="https://learn.superaiacademy.com/l/64eff2a227"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-gold to-amber-500 text-cosmic font-semibold text-sm hover:shadow-glow hover:scale-105 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic inline-flex items-center gap-1.5"
-              >
-                Register Now
-                <span className="inline-block w-3.5 h-3.5 opacity-80" aria-hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-              </a>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://chatgpt.com/g/g-699076db6be4819181b87d63f85fc2da-ai-mahashivaratri-songs-gpt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-lg border border-gold/60 text-gold font-semibold text-sm hover:bg-gold/15 hover:border-gold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic inline-flex items-center gap-1.5"
+                >
+                  Custom GPT
+                  <span className="inline-block w-3.5 h-3.5 opacity-80" aria-hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+                </a>
+                <a
+                  href="https://learn.superaiacademy.com/l/64eff2a227"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-gold to-amber-500 text-cosmic font-semibold text-sm hover:shadow-glow hover:scale-105 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic inline-flex items-center gap-1.5"
+                >
+                  Register Now
+                  <span className="inline-block w-3.5 h-3.5 opacity-80" aria-hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+                </a>
+              </div>
             </div>
 
             <button
@@ -111,6 +120,15 @@ export default function Navbar() {
                     </a>
                   )
                 )}
+                <a
+                  href="https://chatgpt.com/g/g-699076db6be4819181b87d63f85fc2da-ai-mahashivaratri-songs-gpt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center gap-2 min-h-[48px] py-3 px-4 rounded-lg border border-gold/60 text-gold font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cosmic"
+                >
+                  Custom GPT
+                </a>
                 <a
                   href="https://learn.superaiacademy.com/l/64eff2a227"
                   target="_blank"
